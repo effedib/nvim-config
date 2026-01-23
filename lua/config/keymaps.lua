@@ -3,3 +3,4 @@
 -- Add any additional keymaps here
 --
 vim.keymap.set("n", "<CR>", ":put _<CR>", { desc = "new line down", silent = true })
+vim.keymap.set("i", "jj", "<ESC>", { desc = "return to normal mode" })

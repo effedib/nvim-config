@@ -7,7 +7,7 @@ return {
         html = { "prettierd", "prettier", stop_after_first = true },
         css = { "prettierd", "prettier", stop_after_first = true },
         javascript = { "prettierd", "prettier", stop_after_first = true },
-        htmldjango = { "djlint" },
+        htmldjango = { "djlint", stop_after_first = true },
       },
       formatters = {
         djlint = {

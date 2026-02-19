@@ -5,7 +5,6 @@ return {
     ensure_installed = {
       "basedpyright", -- LSP per Python
       "ruff", -- Formatter/Linter
-      "debugpy", -- Debugger
     },
   },
 }

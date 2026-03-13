@@ -23,24 +23,36 @@ return {
     opts = {},
   },
 
-  -- 3. SNACKS (Per vedere il file .env che cercavi prima)
   {
-    "folke/snacks.nvim",
+    "catppuccin/nvim",
+    name = "catppuccin",
     opts = {
-      explorer = {
-        hidden = true,
-        filters = {
-          custom = function(name)
-            if name == ".env" then
-              return true
-            end
-            if name:sub(1, 1) == "." then
-              return false
-            end
-            return true
-          end,
+      transparent_background = true, -- Questo buca lo sfondo principale
+      integrations = {
+        mini = true,
+        snacks = true, -- Rende trasparenti i dashboard e i popup di Snacks
+        telescope = {
+          enabled = true,
+          style = "nvchad", -- Stile pulito per le finestre di ricerca
         },
+        neotree = true, -- Trasparenza per l'albero dei file
+        mason = true, -- Trasparenza per il menu di Mason
+        which_key = true,
+        render_markdown = true,
       },
+      -- Questa funzione forza la trasparenza su elementi che a volte resistono
+      custom_highlights = function(colors)
+        return {
+          -- NormalFloat gestisce i popup (come le info di LSP o le finestre Snacks)
+          NormalFloat = { bg = "none" },
+          FloatBorder = { bg = "none", fg = colors.blue },
+          -- CursorLine rende la riga dove ti trovi leggermente visibile ma trasparente
+          CursorLine = { bg = colors.surface0 },
+          -- Pmenu è il menu del completamento automatico
+          Pmenu = { bg = "none" },
+          PmenuSel = { bg = colors.surface1, fg = "none" },
+        }
+      end,
     },
   },
   {

@@ -24,3 +24,5 @@ if vim.fn.has("wsl") == 1 then
     cache_enabled = 0,
   }
 end
+
+vim.g.loaded_python3_provider = 0

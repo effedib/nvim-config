@@ -26,3 +26,5 @@ if vim.fn.has("wsl") == 1 then
 end
 
 vim.g.loaded_python3_provider = 0
+
+vim.opt.wrap = true

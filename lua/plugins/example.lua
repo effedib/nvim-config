@@ -56,10 +56,24 @@ return {
   --     end,
   --   },
   -- },
+
+  {
+    "ellisonleao/gruvbox.nvim",
+    priority = 1000,
+    config = function()
+      require("gruvbox").setup({
+        contrast = "hard", -- Forza il contrasto massimo
+        palette_overrides = {
+          dark0_hard = "#0e1010", -- Rende lo sfondo quasi nero puro
+        },
+      })
+    end,
+  },
+
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin-mocha",
+      colorscheme = "gruvbox",
     },
   },
 }
